@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
+import Image from "next/image";
 interface Project {
   id: number;
   title: string;
@@ -82,7 +82,7 @@ export default function ProjectCard({
             }
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <img
+            <Image
               src={project.image || "/placeholder.svg"}
               alt={project.title}
               className="w-full h-full object-cover"

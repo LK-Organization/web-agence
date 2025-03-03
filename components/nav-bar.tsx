@@ -1,34 +1,44 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Menu, X, ChevronDown } from "lucide-react"
-import { useMouse } from "@/components/mouse-context"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useMouse } from "@/components/mouse-context";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function NavBar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
-  const { setIsHovering } = useMouse()
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const { setIsHovering } = useMouse();
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-    setActiveMegaMenu(null)
-  }
+    setIsOpen(!isOpen);
+    setActiveMegaMenu(null);
+  };
 
   const toggleMegaMenu = (menu: string) => {
-    setActiveMegaMenu(activeMegaMenu === menu ? null : menu)
-  }
+    setActiveMegaMenu(activeMegaMenu === menu ? null : menu);
+  };
 
-  const handleMouseEnter = () => setIsHovering(true)
-  const handleMouseLeave = () => setIsHovering(false)
+  const handleMouseEnter = () => setIsHovering(true);
+  const handleMouseLeave = () => setIsHovering(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <Link
+            href="/"
+            className="text-2xl font-bold"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             AGENCE
           </Link>
 
@@ -52,9 +62,15 @@ export default function NavBar() {
                     {item === "Services" && (
                       <>
                         <DropdownMenuItem>Développement Web</DropdownMenuItem>
-                        <DropdownMenuItem>Applications Mobiles</DropdownMenuItem>
-                        <DropdownMenuItem>Solutions E-commerce</DropdownMenuItem>
-                        <DropdownMenuItem>Logiciels Sur Mesure</DropdownMenuItem>
+                        <DropdownMenuItem>
+                          Applications Mobiles
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          Solutions E-commerce
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          Logiciels Sur Mesure
+                        </DropdownMenuItem>
                       </>
                     )}
                     {item === "Travaux" && (
@@ -67,7 +83,7 @@ export default function NavBar() {
                     {item === "À Propos" && (
                       <>
                         <DropdownMenuItem>Notre Histoire</DropdownMenuItem>
-                        <DropdownMenuItem>L'Équipe</DropdownMenuItem>
+                        <DropdownMenuItem>L&apos;Équipe</DropdownMenuItem>
                         <DropdownMenuItem>Carrières</DropdownMenuItem>
                       </>
                     )}
@@ -83,7 +99,10 @@ export default function NavBar() {
               </div>
             ))}
 
-            <Button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <Button
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               Commencer
             </Button>
           </nav>
@@ -115,7 +134,9 @@ export default function NavBar() {
                 >
                   <span>{item}</span>
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform ${activeMegaMenu === item ? "rotate-180" : ""}`}
+                    className={`h-4 w-4 transition-transform ${
+                      activeMegaMenu === item ? "rotate-180" : ""
+                    }`}
                   />
                 </Button>
 
@@ -123,16 +144,28 @@ export default function NavBar() {
                   <div className="mt-2 pl-4 space-y-2">
                     {item === "Services" && (
                       <>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Développement Web
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Applications Mobiles
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Solutions E-commerce
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Logiciels Sur Mesure
                         </Button>
                       </>
@@ -140,13 +173,22 @@ export default function NavBar() {
 
                     {item === "Travaux" && (
                       <>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Projets Récents
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Études de Cas
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Témoignages Clients
                         </Button>
                       </>
@@ -154,13 +196,22 @@ export default function NavBar() {
 
                     {item === "À Propos" && (
                       <>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Notre Histoire
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
-                          L'Équipe
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
+                          L&apos;Équipe
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Carrières
                         </Button>
                       </>
@@ -168,13 +219,22 @@ export default function NavBar() {
 
                     {item === "Contact" && (
                       <>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Nous Contacter
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Support
                         </Button>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                        >
                           Partenariats
                         </Button>
                       </>
@@ -189,6 +249,5 @@ export default function NavBar() {
         </div>
       )}
     </header>
-  )
+  );
 }
-
