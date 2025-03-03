@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 
-import { useMouse } from "@/components/mouse-context";
 import { Card, CardContent } from "@/components/ui/card";
 
 const stats = [
