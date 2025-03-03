@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+
 import { useMouse } from "@/components/mouse-context";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -13,43 +13,7 @@ const stats = [
   { value: "30+", label: "Prix Remportés" },
 ];
 
-const team = [
-  {
-    name: "Alexandre Dupont",
-    role: "Fondateur & PDG",
-    image: "/placeholder.svg?height=400&width=400",
-  },
-  {
-    name: "Sophie Martin",
-    role: "Directrice Créative",
-    image: "/placeholder.svg?height=400&width=400",
-  },
-  {
-    name: "Michel Chen",
-    role: "Responsable Technique",
-    image: "/placeholder.svg?height=400&width=400",
-  },
-  {
-    name: "Emma Rodriguez",
-    role: "Directrice Marketing",
-    image: "/placeholder.svg?height=400&width=400",
-  },
-];
-
 export default function About() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const { setIsHovering } = useMouse();
-
-  const handleMouseEnter = (index: number) => {
-    setActiveIndex(index);
-    setIsHovering(true);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveIndex(null);
-    setIsHovering(false);
-  };
-
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -64,12 +28,12 @@ export default function About() {
               exceptionnelles qui stimulent la croissance des entreprises.
             </p>
             <p className="text-muted-foreground mb-8">
-              Fondée en 2013, notre agence est passée d'une petite équipe de
-              trois personnes à une agence numérique complète avec des bureaux à
-              Paris, Londres et Tokyo. Nous travaillons avec des clients de
-              divers secteurs, des startups aux entreprises du Fortune 500, les
-              aidant à atteindre leurs objectifs commerciaux grâce à des
-              solutions numériques innovantes.
+              Fondée en 2013, notre agence est passée d&apos;une petite équipe
+              de trois personnes à une agence numérique complète avec des
+              bureaux à Paris, Londres et Tokyo. Nous travaillons avec des
+              clients de divers secteurs, des startups aux entreprises du
+              Fortune 500, les aidant à atteindre leurs objectifs commerciaux
+              grâce à des solutions numériques innovantes.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -97,8 +61,8 @@ export default function About() {
               <div className="p-8 text-white">
                 <h3 className="text-2xl font-bold mb-2">Notre Culture</h3>
                 <p>
-                  Nous croyons en la collaboration, l'innovation et la livraison
-                  de résultats exceptionnels pour nos clients.
+                  Nous croyons en la collaboration, l&apos;innovation et la
+                  livraison de résultats exceptionnels pour nos clients.
                 </p>
               </div>
             </div>
