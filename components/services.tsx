@@ -1,12 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Code, Palette, BarChart, Globe, Smartphone, Zap } from "lucide-react"
-import { useMouse } from "@/components/mouse-context"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Code, Palette, BarChart, Globe, Smartphone, Zap } from "lucide-react";
+import { useMouse } from "@/components/mouse-context";
 
+import { Button } from "@/components/ui/button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 const services = [
   {
     icon: <Code className="h-10 w-10" />,
@@ -44,21 +42,10 @@ const services = [
     description:
       "Stratégies basées sur les données qui s'alignent avec vos objectifs commerciaux et fournissent une feuille de route pour le succès numérique.",
   },
-]
+];
 
 export default function Services() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const { setIsHovering } = useMouse()
-
-  const handleMouseEnter = (index: number) => {
-    setActiveIndex(index)
-    setIsHovering(true)
-  }
-
-  const handleMouseLeave = () => {
-    setActiveIndex(null)
-    setIsHovering(false)
-  }
+  const { setIsHovering } = useMouse();
 
   return (
     <section className="py-24 bg-muted/30">
@@ -66,43 +53,71 @@ export default function Services() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
           <p className="text-xl text-muted-foreground">
-            Nous offrons une gamme complète de services numériques pour aider votre entreprise à prospérer dans le
-            paysage digital.
+            Nous offrons une gamme complète de services numériques pour aider
+            votre entreprise à prospérer dans le paysage digital.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-3 md:grid-rows-2 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
           {services.map((service, index) => (
-            <motion.div
+            <GridItem
               key={index}
-              whileHover={{ y: -10 }}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Card className={`h-full transition-all duration-300 ${activeIndex === index ? "border-primary" : ""}`}>
-                <CardHeader>
-                  <div
-                    className={`mb-6 text-primary ${activeIndex === index ? "scale-110" : ""} transition-transform duration-300`}
-                  >
-                    {service.icon}
-                  </div>
-                  <CardTitle>{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+            />
           ))}
-        </div>
-
+        </ul>
         <div className="mt-16 text-center">
-          <Button size="lg" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+          <Button
+            size="lg"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
             Voir Tous les Services
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
+interface GridItemProps {
+  icon: React.ReactNode;
+  title: string;
+  description: React.ReactNode;
+}
+
+const GridItem = ({ icon, title, description }: GridItemProps) => {
+  return (
+    <li className={`min-h-[14rem] list-none`}>
+      <div className="relative h-full rounded-2.5xl border  p-2  md:rounded-3xl md:p-3">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+        />
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-6  dark:shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6">
+          <div className="relative flex flex-1 flex-col justify-between gap-3">
+            <div className="w-fit rounded-lg border border-gray-600 p-2 ">
+              {icon}
+            </div>
+            <div className="space-y-3">
+              <h3 className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-balance text-black dark:text-white">
+                {title}
+              </h3>
+              <h2
+                className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] 
+              md:text-base/[1.375rem]  text-black dark:text-neutral-400"
+              >
+                {description}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+};
