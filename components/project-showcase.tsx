@@ -13,8 +13,7 @@ const projects = [
     description:
       "A full-featured online shopping platform with cart, checkout, and payment integration. Built with modern technologies to ensure a seamless shopping experience for users across all devices.",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    image:
-      "https://w3layouts.b-cdn.net//wp-content/uploads/2020/06/mastery.jpg",
+    image: "/1.webp",
     color: "bg-blue-500",
   },
   {
@@ -23,8 +22,7 @@ const projects = [
     description:
       "A responsive portfolio website showcasing creative work and professional experience. Designed with a focus on visual aesthetics and user experience to highlight projects effectively.",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    image:
-      "https://asset.gecdesigns.com/img/website-templates/freelancers-and-startups-business-website-template-141119-1610385954426-cover.webp",
+    image: "/2.webp",
     color: "bg-purple-500",
   },
   {
@@ -33,8 +31,7 @@ const projects = [
     description:
       "A collaborative task management application with real-time updates and team features. Helps teams organize work, track progress, and meet deadlines through an intuitive interface.",
     technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-    image:
-      "https://weblium.com/blog/wp-content/uploads/2019/05/imgonline-com-ua-Compressed-B8y1EYhpR0m1.jpg",
+    image: "/3.webp",
     color: "bg-emerald-500",
   },
   {
@@ -43,8 +40,7 @@ const projects = [
     description:
       "An AI-powered application that generates custom content based on user prompts. Leverages advanced machine learning models to create high-quality, contextually relevant content.",
     technologies: ["Python", "TensorFlow", "React", "FastAPI"],
-    image:
-      "https://i.pinimg.com/736x/61/fc/5b/61fc5bb139ea2df66296f4067e046bbf.jpg",
+    image: "/4.webp",
     color: "bg-amber-500",
   },
 ];
@@ -88,11 +84,11 @@ export default function ProjectShowcase() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="py-24">
       {/* Header section */}
-      <div className="flex items-center justify-center bg-background">
-        <div className="text-center max-w-3xl px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Nos Travaux</h1>
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Nos Travaux</h1>
           <p className="text-xl text-muted-foreground">
             Explorez notre portfolio de projets primés qui mettent en valeur
             notre expertise et notre créativité.

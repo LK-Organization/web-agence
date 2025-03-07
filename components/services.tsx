@@ -7,37 +7,37 @@ import { Button } from "@/components/ui/button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 const services = [
   {
-    icon: <Code className="h-10 w-10" />,
+    icon: <Code color="white" className="h-10 w-10" />,
     title: "Développement Web",
     description:
       "Sites web et applications web personnalisés construits avec les dernières technologies pour des performances et une expérience utilisateur optimales.",
   },
   {
-    icon: <Palette className="h-10 w-10" />,
+    icon: <Palette color="white" className="h-10 w-10" />,
     title: "Design UI/UX",
     description:
       "Design centré sur l'utilisateur qui crée des interfaces intuitives et engageantes pour améliorer la satisfaction des utilisateurs et les résultats commerciaux.",
   },
   {
-    icon: <BarChart className="h-10 w-10" />,
+    icon: <BarChart color="white" className="h-10 w-10" />,
     title: "Marketing Digital",
     description:
       "Solutions marketing stratégiques qui génèrent du trafic, des leads et augmentent les conversions pour une croissance durable.",
   },
   {
-    icon: <Globe className="h-10 w-10" />,
+    icon: <Globe color="white" className="h-10 w-10" />,
     title: "Image de Marque",
     description:
       "Développement complet de la marque qui communique votre proposition de valeur unique et connecte avec votre audience.",
   },
   {
-    icon: <Smartphone className="h-10 w-10" />,
+    icon: <Smartphone color="white" className="h-10 w-10" />,
     title: "Développement Mobile",
     description:
       "Applications mobiles natives et multiplateformes qui offrent des expériences utilisateur exceptionnelles sur tous les appareils.",
   },
   {
-    icon: <Zap className="h-10 w-10" />,
+    icon: <Zap color="white" className="h-10 w-10" />,
     title: "Stratégie Digitale",
     description:
       "Stratégies basées sur les données qui s'alignent avec vos objectifs commerciaux et fournissent une feuille de route pour le succès numérique.",
@@ -99,18 +99,18 @@ const GridItem = ({ icon, title, description }: GridItemProps) => {
           proximity={64}
           inactiveZone={0.01}
         />
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-6  dark:shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6">
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-6  shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6">
           <div className="relative flex flex-1 flex-col justify-between gap-3">
             <div className="w-fit rounded-lg border border-gray-600 p-2 ">
               {icon}
             </div>
             <div className="space-y-3">
-              <h3 className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-balance text-black dark:text-white">
+              <h3 className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-balance text-white">
                 {title}
               </h3>
               <h2
                 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] 
-              md:text-base/[1.375rem]  text-black dark:text-neutral-400"
+              md:text-base/[1.375rem] text-neutral-400"
               >
                 {description}
               </h2>
