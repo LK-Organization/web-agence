@@ -11,7 +11,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ModeToggle } from "./theme-toggle";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,7 +98,7 @@ export default function NavBar() {
                 </DropdownMenu>
               </div>
             ))}
-            <ModeToggle />
+
             <Button
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -244,7 +243,7 @@ export default function NavBar() {
                 )}
               </div>
             ))}
-            <ModeToggle />
+
             <Button className="w-full">Commencer</Button>
           </div>
         </div>
