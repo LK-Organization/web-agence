@@ -90,7 +90,7 @@ export default function ProjectShowcase() {
   return (
     <div className="relative">
       {/* Header section */}
-      <div className="h-screen flex items-center justify-center bg-background">
+      <div className="flex items-center justify-center bg-background">
         <div className="text-center max-w-3xl px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Nos Travaux</h1>
           <p className="text-xl text-muted-foreground">
@@ -111,7 +111,7 @@ export default function ProjectShowcase() {
                 sectionRefs.current[index] = el;
               }}
               data-index={index}
-              className="min-h-screen flex items-center p-6 md:p-12"
+              className="md:min-h-screen flex items-center p-6 md:p-12"
             >
               <ProjectSection
                 project={project}

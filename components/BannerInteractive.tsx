@@ -29,17 +29,17 @@ export default function BannerInteractive() {
 
   return (
     <>
-      <div
-        className="h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden relative"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {/* Render the 3D scene only on non‑mobile devices */}
-        {!isMobile && DynamicThreeScene && (
+      {" "}
+      {/* Render the 3D scene only on non‑mobile devices */}
+      {!isMobile && DynamicThreeScene && (
+        <div
+          className="h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden relative"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <DynamicThreeScene isHovered={isHovered} />
-        )}
-      </div>
-
+        </div>
+      )}
       <Button
         variant="outline"
         size="icon"
