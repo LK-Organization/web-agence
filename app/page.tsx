@@ -13,6 +13,7 @@ export default function Home() {
         <NavBar />
         <main>
           <Banner />
+
           <Services />
           <ProjectShowcase />
           <About />
