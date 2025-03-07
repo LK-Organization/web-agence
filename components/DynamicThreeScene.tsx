@@ -5,7 +5,8 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, Float } from "@react-three/drei";
 import TechBipyramid from "@/components/TechBipyramid";
 
-export default function DynamicThreeScene({ isHovered }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function DynamicThreeScene({ isHovered }: any) {
   return (
     <Canvas camera={{ position: [0, 0, 5], fov: 45 }} dpr={[1, 1.5]}>
       <ambientLight intensity={0.5} />

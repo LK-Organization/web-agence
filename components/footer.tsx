@@ -1,11 +1,5 @@
 "use client";
-import {
-  Instagram,
-  Twitter,
-  Linkedin,
-  Github,
-  ArrowUpRight,
-} from "lucide-react";
+import { Instagram, Twitter, Linkedin, Github } from "lucide-react";
 import { useMouse } from "@/components/mouse-context";
 import { Button } from "@/components/ui/button";
 
@@ -19,13 +13,13 @@ export default function Footer() {
     <footer className="bg-background text-foreground py-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
+          <div className="flex flex-col space-x-4 items-center md:items-start">
             <h2 className="text-2xl font-bold mb-6">AGENCE</h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-6 text-center md:text-left">
               Créer des expériences numériques exceptionnelles qui transforment
               les marques et stimulent la croissance des entreprises.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-start">
               <Button
                 variant="ghost"
                 size="icon"
@@ -65,9 +59,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-6">Services</h3>
-            <ul className="space-y-4">
+            <ul className="flex flex-col items-center md:items-start space-y-4">
               {[
                 "Développement Web",
                 "Design UI/UX",
@@ -84,16 +78,15 @@ export default function Footer() {
                     onMouseLeave={handleMouseLeave}
                   >
                     {service}
-                    <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Button>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-6">Entreprise</h3>
-            <ul className="space-y-4">
+            <ul className="flex flex-col items-center md:items-start space-y-4">
               {[
                 "À Propos",
                 "Carrières",
@@ -110,16 +103,15 @@ export default function Footer() {
                     onMouseLeave={handleMouseLeave}
                   >
                     {item}
-                    <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Button>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-6">Contact</h3>
-            <ul className="space-y-4 text-muted-foreground">
+            <ul className="flex flex-col items-center md:items-start space-y-4 text-muted-foreground">
               <li>123 Rue de l&apos;Agence</li>
               <li>75001 Paris</li>
               <li>France</li>
@@ -151,7 +143,7 @@ export default function Footer() {
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Agence. Tous droits réservés.
           </p>
-          <div className="flex space-x-6">
+          <div className="flex flex-col md:flex-row gap-4">
             <Button
               variant="link"
               className="text-muted-foreground hover:text-foreground text-sm"
