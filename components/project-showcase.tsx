@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectSection from "./project-section";
+import Image from "next/image";
 
 // Sample project data - replace with your actual projects
 const projects = [
@@ -89,7 +90,7 @@ export default function ProjectShowcase() {
   return (
     <div className="relative">
       {/* Header section */}
-      <div className="h-screen flex items-center justify-center bg-background">
+      <div className="flex items-center justify-center bg-background">
         <div className="text-center max-w-3xl px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Nos Travaux</h1>
           <p className="text-xl text-muted-foreground">
@@ -110,7 +111,7 @@ export default function ProjectShowcase() {
                 sectionRefs.current[index] = el;
               }}
               data-index={index}
-              className="min-h-screen flex items-center p-6 md:p-12"
+              className="md:min-h-screen flex items-center p-6 md:p-12"
             >
               <ProjectSection
                 project={project}
@@ -130,22 +131,19 @@ export default function ProjectShowcase() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="w-full h-full max-w-xl max-h-xl relative rounded-2xl overflow-hidden shadow-2xl"
+                className="w-full  max-w-xl max-h-xl relative rounded-2xl overflow-hidden shadow-2xl"
               >
                 <div
                   className={`absolute inset-0 ${projects[activeProject].color} opacity-20`}
                 />
-                <img
+                <Image
+                  width={1000}
+                  height={1000}
                   src={projects[activeProject].image || "/placeholder.svg"}
                   alt={projects[activeProject].title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <span className="text-sm font-medium">
-                    Projet {activeProject + 1}/{projects.length}
-                  </span>
-                </div>
               </motion.div>
             </AnimatePresence>
           </div>

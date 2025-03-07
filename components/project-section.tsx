@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 interface Project {
   id: number;
@@ -35,10 +36,12 @@ export default function ProjectSection({
     >
       {/* Mobile image (visible only on mobile) */}
       <div className="md:hidden mb-6 rounded-xl overflow-hidden">
-        <img
+        <Image
           src={project.image || "/placeholder.svg"}
           alt={project.title}
           className="w-full h-48 object-cover"
+          width={500}
+          height={500}
         />
       </div>
 
