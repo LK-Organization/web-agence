@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +14,11 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+  params,
+}: Readonly<{
   children: React.ReactNode;
-}) {
+  params: { locale: string };
+}>) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={inter.className}>
@@ -25,7 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Providers locale={params.locale}>{children}</Providers>
           <Toaster />
         </ThemeProvider>
       </body>
