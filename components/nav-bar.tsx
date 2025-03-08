@@ -103,7 +103,7 @@ export default function NavBar() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              Commencer
+              Contactez-nous
             </Button>
           </nav>
 
@@ -244,7 +244,7 @@ export default function NavBar() {
               </div>
             ))}
 
-            <Button className="w-full">Commencer</Button>
+            <Button className="w-full">Contactez-nous</Button>
           </div>
         </div>
       )}

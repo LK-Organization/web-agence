@@ -67,6 +67,26 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        slowPulse: {
+          "0%, 100%": {
+            opacity: 0.5,
+            transform: "scale(1)",
+          },
+          "50%": {
+            opacity: 1,
+            transform: "scale(1.05)",
+          },
+        },
+        floatText: {
+          "0%, 100%": {
+            opacity: 0,
+            transform: "translateY(10px) translateX(0px)",
+          },
+          "50%": {
+            opacity: 1,
+            transform: "translateY(0) translateX(5px)",
+          },
+        },
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
@@ -85,6 +105,8 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "meteor-effect": "meteor 5s linear infinite",
+        "slow-pulse": "slowPulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float-text": "floatText 8s ease-in-out infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
