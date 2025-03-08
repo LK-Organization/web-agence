@@ -5,8 +5,8 @@ export default function Banner() {
   return (
     <section className="relative h-screen pt-20 flex items-center overflow-hidden">
       {/* Animated blue gradient light */}
-      <div className="absolute -top-40 -left-40 w-[60rem] h-[60rem] rounded-full bg-blue-500/30 blur-[100px] animate-slow-pulse" />
-      <div className="absolute -top-20 -left-20 w-[40rem] h-[40rem] rounded-full bg-blue-400/20 blur-[80px] animate-slow-pulse [animation-delay:4s]" />
+      <div className="absolute -top-40 -left-40 w-[70rem] h-[70rem] rounded-full bg-primary/30 blur-[100px] animate-slow-pulse" />
+      <div className="absolute -top-20 -left-20 w-[40rem] h-[40rem] rounded-full bg-primary/20 blur-[80px] animate-slow-pulse [animation-delay:4s]" />
 
       <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-6">

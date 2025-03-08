@@ -33,9 +33,6 @@ export default function BannerInteractive() {
 
   return (
     <>
-      <div className="absolute w-[50rem] h-[50rem] rounded-full bg-blue-500/30 blur-[100px] animate-slow-pulse" />
-      <div className="absolute w-[30rem] h-[30rem] rounded-full bg-blue-400/20 blur-[80px] animate-slow-pulse [animation-delay:3s]" />
-
       {/* Render the 3D scene only on non‑mobile devices */}
       {!isMobile && DynamicThreeScene && (
         <div
