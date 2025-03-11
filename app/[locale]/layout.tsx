@@ -1,26 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import type React from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Providers from "./providers";
+import { type Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Agence Numérique",
   description: "Créons des expériences numériques exceptionnelles",
 };
 
-export default function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-}>) {
+export default function RootLayout({ children, params }: any) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang={params.locale} suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
