@@ -1,5 +1,3 @@
-import Skills from "@/app/_components/Skills";
-
 export default {
   banner: {
     text1: "Hi, my name is",
