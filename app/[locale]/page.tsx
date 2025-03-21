@@ -5,7 +5,7 @@ import About from "@/components/about";
 import Footer from "@/components/footer";
 import { MouseProvider } from "@/components/mouse-context";
 import ProjectShowcase from "@/components/project-showcase";
-
+import infiniteTech from "@/components/infinite-tech";
 export default function Home() {
   return (
     <MouseProvider>
@@ -13,7 +13,7 @@ export default function Home() {
         <NavBar />
         <main>
           <Banner />
-
+          {infiniteTech()}
           <Services />
           <ProjectShowcase />
           <About />

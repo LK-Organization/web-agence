@@ -11,11 +11,11 @@ import { type Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Agence Numérique",
+  title: "MyMegaDev - Agence Numérique",
   description: "Créons des expériences numériques exceptionnelles",
 };
 
-export default function RootLayout({ children, params }: any) {
+export default async function RootLayout({ children, params }: any) {
   return (
     <html lang={params.locale} suppressHydrationWarning>
       <body className={inter.className}>

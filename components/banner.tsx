@@ -1,5 +1,6 @@
 import BannerInteractive from "./BannerInteractive";
 import { Button } from "@/components/ui/button";
+import { ContactModal } from "./ContactModal";
 
 export default function Banner() {
   return (
@@ -18,11 +19,13 @@ export default function Banner() {
             Agence primée créant des solutions numériques innovantes qui
             transforment les marques et stimulent la croissance des entreprises.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4  ">
             <Button size="lg">Nos Travaux</Button>
-            <Button variant="outline" size="lg">
-              Contactez-nous
-            </Button>
+            <ContactModal>
+              <Button variant="outline" size="lg">
+                Contactez-nous
+              </Button>
+            </ContactModal>
           </div>
         </div>
 
