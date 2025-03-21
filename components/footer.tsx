@@ -14,8 +14,8 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:justify-between gap-12">
           <div className="flex flex-col space-x-4 items-center md:items-start ">
-            <h2 className="text-2xl font-bold mb-6">AGENCE</h2>
-            <p className="text-muted-foreground mb-6 text-center md:text-left">
+            <h2 className="text-2xl font-bold mb-6">Logo MyMegaDev</h2>
+            <p className="text-muted-foreground mb-6 text-center md:text-left w-[500px]">
               Créer des expériences numériques exceptionnelles qui transforment
               les marques et stimulent la croissance des entreprises.
             </p>
@@ -94,30 +94,23 @@ export default function Footer() {
             © {new Date().getFullYear()} Agence. Tous droits réservés.
           </p>
           <div className="flex flex-col md:flex-row gap-4">
-            <Button
-              variant="link"
+            <a
+              href="/conditions-utilisation"
               className="text-muted-foreground hover:text-foreground text-sm"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               Conditions d&apos;Utilisation
-            </Button>
-            <Button
-              variant="link"
+            </a>
+
+            <a
+              href="/politique-confidentialite"
               className="text-muted-foreground hover:text-foreground text-sm"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               Politique de Confidentialité
-            </Button>
-            <Button
-              variant="link"
-              className="text-muted-foreground hover:text-foreground text-sm"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              Cookies
-            </Button>
+            </a>
           </div>
         </div>
       </div>

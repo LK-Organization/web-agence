@@ -50,20 +50,11 @@ export default function About() {
           </div>
           <div className="relative h-[500px] rounded-xl overflow-hidden">
             <Image
-              src="/placeholder.svg?height=1000&width=800"
+              src="/dylan-gillis-KdeqA3aTnBY-unsplash.webp"
               alt="Notre Équipe"
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-              <div className="p-8 text-white">
-                <h3 className="text-2xl font-bold mb-2">Notre Culture</h3>
-                <p>
-                  Nous croyons en la collaboration, l&apos;innovation et la
-                  livraison de résultats exceptionnels pour nos clients.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
