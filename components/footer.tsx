@@ -12,8 +12,8 @@ export default function Footer() {
   return (
     <footer className="bg-background text-foreground py-20">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="flex flex-col space-x-4 items-center md:items-start">
+        <div className="flex flex-col md:flex-row md:justify-between gap-12">
+          <div className="flex flex-col space-x-4 items-center md:items-start ">
             <h2 className="text-2xl font-bold mb-6">AGENCE</h2>
             <p className="text-muted-foreground mb-6 text-center md:text-left">
               Créer des expériences numériques exceptionnelles qui transforment
@@ -57,56 +57,6 @@ export default function Footer() {
                 <span className="sr-only">GitHub</span>
               </Button>
             </div>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-semibold mb-6">Services</h3>
-            <ul className="flex flex-col items-center md:items-start space-y-4">
-              {[
-                "Développement Web",
-                "Design UI/UX",
-                "Marketing Digital",
-                "Image de Marque",
-                "Développement Mobile",
-                "Stratégie Digitale",
-              ].map((service, index) => (
-                <li key={index}>
-                  <Button
-                    variant="link"
-                    className="p-0 h-auto text-muted-foreground hover:text-foreground"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {service}
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-semibold mb-6">Entreprise</h3>
-            <ul className="flex flex-col items-center md:items-start space-y-4">
-              {[
-                "À Propos",
-                "Carrières",
-                "Études de Cas",
-                "Blog",
-                "Contact",
-                "Politique de Confidentialité",
-              ].map((item, index) => (
-                <li key={index}>
-                  <Button
-                    variant="link"
-                    className="p-0 h-auto text-muted-foreground hover:text-foreground"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {item}
-                  </Button>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div className="flex flex-col items-center md:items-start">

@@ -13,7 +13,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-muted/30" id="about">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>

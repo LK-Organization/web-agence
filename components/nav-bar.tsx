@@ -5,13 +5,7 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useMouse } from "@/components/mouse-context";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
+import { ContactModal } from "@/components/ContactModal";
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
@@ -39,73 +33,23 @@ export default function NavBar() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            AGENCE
+            MyMegaDev
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {["Services", "Travaux", "À Propos", "Contact"].map((item) => (
-              <div key={item} className="relative group">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      className="flex items-center text-base font-medium"
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      {item}
-                      <ChevronDown className="ml-1 h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56">
-                    {item === "Services" && (
-                      <>
-                        <DropdownMenuItem>Développement Web</DropdownMenuItem>
-                        <DropdownMenuItem>
-                          Applications Mobiles
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          Solutions E-commerce
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          Logiciels Sur Mesure
-                        </DropdownMenuItem>
-                      </>
-                    )}
-                    {item === "Travaux" && (
-                      <>
-                        <DropdownMenuItem>Projets Récents</DropdownMenuItem>
-                        <DropdownMenuItem>Études de Cas</DropdownMenuItem>
-                        <DropdownMenuItem>Témoignages Clients</DropdownMenuItem>
-                      </>
-                    )}
-                    {item === "À Propos" && (
-                      <>
-                        <DropdownMenuItem>Notre Histoire</DropdownMenuItem>
-                        <DropdownMenuItem>L&apos;Équipe</DropdownMenuItem>
-                        <DropdownMenuItem>Carrières</DropdownMenuItem>
-                      </>
-                    )}
-                    {item === "Contact" && (
-                      <>
-                        <DropdownMenuItem>Nous Contacter</DropdownMenuItem>
-                        <DropdownMenuItem>Support</DropdownMenuItem>
-                        <DropdownMenuItem>Partenariats</DropdownMenuItem>
-                      </>
-                    )}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
-            ))}
-
-            <Button
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              Contactez-nous
-            </Button>
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#services">Services</a>
+            <a href="#projects">Travaux</a>
+            <a href="#about">A Propos</a>
+            <ContactModal>
+              <Button
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                Contactez-nous
+              </Button>
+            </ContactModal>
+          </div>
 
           {/* Mobile Menu Button */}
           <Button
