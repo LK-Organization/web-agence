@@ -7,6 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Providers from "./providers";
 import { type Metadata } from "next";
+import NavBar from "@/components/nav-bar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +27,11 @@ export default async function RootLayout({ children, params }: any) {
           enableSystem
           disableTransitionOnChange
         >
-          <Providers locale={params.locale}>{children}</Providers>
+          <Providers locale={params.locale}>
+            <NavBar />
+            {children}
+          </Providers>
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>
