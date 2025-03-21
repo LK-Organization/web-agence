@@ -51,6 +51,7 @@ export default function ProjectShowcase() {
 
   useEffect(() => {
     // Set up intersection observer to detect which project is in view
+    const sections = sectionRefs.current;
     const observerOptions = {
       root: null,
       rootMargin: "-50% 0px", // Consider element in view when it's 50% in viewport
@@ -71,20 +72,19 @@ export default function ProjectShowcase() {
       observerOptions
     );
 
-    // Observe all project sections
-    sectionRefs.current.forEach((section) => {
+    sections.forEach((section) => {
       if (section) observer.observe(section);
     });
 
     return () => {
-      sectionRefs.current.forEach((section) => {
+      sections.forEach((section) => {
         if (section) observer.unobserve(section);
       });
     };
   }, []);
 
   return (
-    <div className="py-24">
+    <div className="py-24" id="projects">
       {/* Header section */}
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">

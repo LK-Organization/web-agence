@@ -59,6 +59,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -66,6 +70,26 @@ const config = {
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
+        },
+        slowPulse: {
+          "0%, 100%": {
+            opacity: 0.5,
+            transform: "scale(1)",
+          },
+          "50%": {
+            opacity: 1,
+            transform: "scale(1.05)",
+          },
+        },
+        floatText: {
+          "0%, 100%": {
+            opacity: 0,
+            transform: "translateY(10px) translateX(0px)",
+          },
+          "50%": {
+            opacity: 1,
+            transform: "translateY(0) translateX(5px)",
+          },
         },
         scroll: {
           to: {
@@ -82,9 +106,12 @@ const config = {
         },
       },
       animation: {
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "meteor-effect": "meteor 5s linear infinite",
+        "slow-pulse": "slowPulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float-text": "floatText 8s ease-in-out infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },

@@ -12,10 +12,10 @@ export default function Footer() {
   return (
     <footer className="bg-background text-foreground py-20">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="flex flex-col space-x-4 items-center md:items-start">
-            <h2 className="text-2xl font-bold mb-6">AGENCE</h2>
-            <p className="text-muted-foreground mb-6 text-center md:text-left">
+        <div className="flex flex-col md:flex-row md:justify-between gap-12">
+          <div className="flex flex-col space-x-4 items-center md:items-start ">
+            <h2 className="text-2xl font-bold mb-6">Logo MyMegaDev</h2>
+            <p className="text-muted-foreground mb-6 text-center md:text-left md:w-[500px] w-full">
               Créer des expériences numériques exceptionnelles qui transforment
               les marques et stimulent la croissance des entreprises.
             </p>
@@ -60,56 +60,6 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-semibold mb-6">Services</h3>
-            <ul className="flex flex-col items-center md:items-start space-y-4">
-              {[
-                "Développement Web",
-                "Design UI/UX",
-                "Marketing Digital",
-                "Image de Marque",
-                "Développement Mobile",
-                "Stratégie Digitale",
-              ].map((service, index) => (
-                <li key={index}>
-                  <Button
-                    variant="link"
-                    className="p-0 h-auto text-muted-foreground hover:text-foreground"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {service}
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-semibold mb-6">Entreprise</h3>
-            <ul className="flex flex-col items-center md:items-start space-y-4">
-              {[
-                "À Propos",
-                "Carrières",
-                "Études de Cas",
-                "Blog",
-                "Contact",
-                "Politique de Confidentialité",
-              ].map((item, index) => (
-                <li key={index}>
-                  <Button
-                    variant="link"
-                    className="p-0 h-auto text-muted-foreground hover:text-foreground"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {item}
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-6">Contact</h3>
             <ul className="flex flex-col items-center md:items-start space-y-4 text-muted-foreground">
               <li>123 Rue de l&apos;Agence</li>
@@ -144,30 +94,23 @@ export default function Footer() {
             © {new Date().getFullYear()} Agence. Tous droits réservés.
           </p>
           <div className="flex flex-col md:flex-row gap-4">
-            <Button
-              variant="link"
+            <a
+              href="/conditions-utilisation"
               className="text-muted-foreground hover:text-foreground text-sm"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               Conditions d&apos;Utilisation
-            </Button>
-            <Button
-              variant="link"
+            </a>
+
+            <a
+              href="/politique-confidentialite"
               className="text-muted-foreground hover:text-foreground text-sm"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               Politique de Confidentialité
-            </Button>
-            <Button
-              variant="link"
-              className="text-muted-foreground hover:text-foreground text-sm"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              Cookies
-            </Button>
+            </a>
           </div>
         </div>
       </div>

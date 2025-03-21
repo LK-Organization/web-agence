@@ -1,23 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import type React from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import Providers from "./providers";
+import { type Metadata } from "next";
+import NavBar from "@/components/nav-bar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Agence Numérique",
+export const metadata: Metadata = {
+  title: "MyMegaDev - Agence Numérique",
   description: "Créons des expériences numériques exceptionnelles",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children, params }: any) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang={params.locale} suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
@@ -25,7 +27,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Providers locale={params.locale}>
+            <NavBar />
+            {children}
+          </Providers>
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>
