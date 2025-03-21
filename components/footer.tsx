@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between gap-12">
           <div className="flex flex-col space-x-4 items-center md:items-start ">
             <h2 className="text-2xl font-bold mb-6">Logo MyMegaDev</h2>
-            <p className="text-muted-foreground mb-6 text-center md:text-left w-[500px]">
+            <p className="text-muted-foreground mb-6 text-center md:text-left md:w-[500px] w-full">
               Créer des expériences numériques exceptionnelles qui transforment
               les marques et stimulent la croissance des entreprises.
             </p>

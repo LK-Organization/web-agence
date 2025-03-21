@@ -60,8 +60,11 @@ const techStack = [
 
 export default function InfiniteTech() {
   return (
-    <div className="w-full text-5xl py-8 inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-      <ul className="flex items-center justify-center md:justify-start sm:[&_li]:mx-8 [&_li]:mx-4 [&_img]:max-w-none animate-infinite-scroll">
+    <div
+      className="w-full text-5xl py-8 inline-flex flex-nowrap overflow-hidden bg-[red]/0
+ [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] "
+    >
+      <ul className="flex bg-transparent items-center justify-center md:justify-start sm:[&_li]:mx-8 [&_li]:mx-4 [&_img]:max-w-none animate-infinite-scroll">
         {techStack.map((tech, index) => (
           <li key={index}>
             <a
@@ -71,7 +74,13 @@ export default function InfiniteTech() {
               className="text-primary-foreground text-2xl grid place-content-center rounded-md hover:opacity-90 transition-opacity"
               aria-label={tech.name}
             >
-              <Image src={tech.link} alt={tech.name} width={100} height={100} />
+              <Image
+                className="w-20 md:w-24"
+                src={tech.link}
+                alt={tech.name}
+                width={100}
+                height={100}
+              />
             </a>
           </li>
         ))}
@@ -83,7 +92,13 @@ export default function InfiniteTech() {
               href={tech.href}
               className=" text-primary-foreground text-2xl grid place-content-center rounded-md"
             >
-              <Image src={tech.link} alt={tech.name} width={100} height={100} />
+              <Image
+                className="w-20 md:w-24"
+                src={tech.link}
+                alt={tech.name}
+                width={100}
+                height={100}
+              />
             </a>
           </li>
         ))}
@@ -100,7 +115,13 @@ export default function InfiniteTech() {
               href={tech.href}
               className="text-primary-foreground text-2xl grid place-content-center  rounded-md"
             >
-              <Image src={tech.link} alt={tech.name} width={100} height={100} />
+              <Image
+                className="w-20 md:w-24"
+                src={tech.link}
+                alt={tech.name}
+                width={100}
+                height={100}
+              />
             </a>
           </li>
         ))}
@@ -112,7 +133,13 @@ export default function InfiniteTech() {
               href={tech.href}
               className=" text-primary-foreground text-2xl grid place-content-center  rounded-md"
             >
-              <Image src={tech.link} alt={tech.name} width={100} height={100} />
+              <Image
+                className="w-20 md:w-24"
+                src={tech.link}
+                alt={tech.name}
+                width={100}
+                height={100}
+              />
             </a>
           </li>
         ))}

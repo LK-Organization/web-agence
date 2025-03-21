@@ -159,8 +159,6 @@ export function ContactModal({ children }: PropsWithChildren<object>) {
             {/* The submit button triggers the form submission */}
             <Button
               type="button"
-              size="inner"
-              variant="nobackground"
               onClick={form.handleSubmit(onSubmit)} // Call onSubmit function on click
             >
               Envoyer
